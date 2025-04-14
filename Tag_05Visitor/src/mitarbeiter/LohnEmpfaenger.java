@@ -17,6 +17,22 @@ public class LohnEmpfaenger extends AbstractMitarbeiter{
         this.stundenlohn = stundenlohn;
     }
 
+    public double getArbeitszeit() {
+        return arbeitszeit;
+    }
+
+    public void setArbeitszeit(final double arbeitszeit) {
+        this.arbeitszeit = arbeitszeit;
+    }
+
+    public double getStundenlohn() {
+        return stundenlohn;
+    }
+
+    public void setStundenlohn(final double stundenlohn) {
+        this.stundenlohn = stundenlohn;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder(super.toString());
