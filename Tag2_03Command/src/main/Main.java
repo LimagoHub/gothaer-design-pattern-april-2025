@@ -29,6 +29,7 @@ public class Main {
             Command command = CommandFactory.create(zeile);
             if(command == null) continue;
             command.execute();
+            history.addCommand(command);
         }
     }
 }
