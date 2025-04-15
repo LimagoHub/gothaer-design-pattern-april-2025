@@ -1,9 +1,15 @@
 package main;
 
+import event.PropertyChangedEvent;
+import event.PropertyChangedListener;
 import tiere.PigTooFatListener;
 import tiere.Schwein;
 
-public class Main {
+public class Main implements PropertyChangedListener {
+    @Override
+    public void propertyChanged(final PropertyChangedEvent event) {
+        System.out.println("PropertyChangedEvent: " + event);
+    }
 
     private Metzger metzger = new Metzger();
     private Spediteuer spediteur = new Spediteuer();
