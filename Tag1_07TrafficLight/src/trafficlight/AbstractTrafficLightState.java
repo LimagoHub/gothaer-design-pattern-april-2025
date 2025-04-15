@@ -21,4 +21,14 @@ public abstract class AbstractTrafficLightState implements TrafficLightState {
     public void nextColor() {
         throw new UnsupportedOperationException("Upps");
     }
+
+    @Override
+    public void switchOn() {
+        throw new UnsupportedOperationException("Upps");
+    }
+
+    @Override
+    public void switchOff() {
+        throw new UnsupportedOperationException("Upps");
+    }
 }
