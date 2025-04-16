@@ -1,16 +1,16 @@
 package main;
 
-import processor.AbstractFileProcessor;
 import processor.CharacterCounter;
+import processor.FileProcessor;
 import processor.FileCopy;
 import processor.LineCounter;
-
-import javax.sound.sampled.Line;
 
 public class Main {
     public static void main(String[] args) {
 
-        AbstractFileProcessor fileProcessor = new FileCopy();
+        FileProcessor fileProcessor = new FileProcessor();
+        fileProcessor.addCharacterHandler(new CharacterCounter());
+        fileProcessor.addCharacterHandler(new LineCounter());
         fileProcessor.run("./src/resources/eingabe.txt");
     }
 }

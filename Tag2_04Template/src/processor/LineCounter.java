@@ -1,23 +1,15 @@
 package processor;
 
-public class LineCounter extends AbstractFileProcessor {
+public class LineCounter extends AbstractCounter {
 
-    private int counter = 0;
 
-    @Override
-    public void init() {
-        counter = 0;
-    }
 
     @Override
     public void process(final char c) {
         if(c == '\n') {
-            counter++;
+            incrementCounter();
         }
     }
 
-    @Override
-    public void dispose() {
-        System.out.println(this.getClass().getSimpleName() + ": " + counter);
-    }
+
 }

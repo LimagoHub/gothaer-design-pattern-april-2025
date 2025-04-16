@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileCopy extends AbstractFileProcessor {
+public class FileCopy implements CharacterHandler {
 
     private FileWriter fileWriter;
 
