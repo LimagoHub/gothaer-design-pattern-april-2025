@@ -3,6 +3,7 @@ package main;
 import composite.AbstractKontoNode;
 import composite.Konto;
 import composite.Kontogruppe;
+import composite.visitor.PrintVisitor;
 
 import java.util.Iterator;
 
@@ -31,9 +32,9 @@ public class Main {
         Konto e2_4 = new Konto("e2_4");
         e1_2.appendChild(e2_4);
 
-        root.print();
+        //root.print();
 
-        for (AbstractKontoNode node : root) {
+       /* for (AbstractKontoNode node : root) {
             System.out.println(node);
         }
         for(Iterator<AbstractKontoNode> it = root.iterator(); it.hasNext();) {
@@ -41,6 +42,9 @@ public class Main {
             System.out.println(node);
         }
         //traverse(root);
+
+        */
+        root.iterate(new PrintVisitor());
     }
 
     public static void traverse(AbstractKontoNode abstractKontoNode) {

@@ -1,5 +1,7 @@
 package composite;
 
+import composite.visitor.BankVisitor;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,5 +26,10 @@ public class Kontogruppe extends AbstractKontoNode {
     public void removeChild(final AbstractKontoNode child) {
         child.setParent(null);
         children.remove(child);
+    }
+
+    @Override
+    public void accept(final BankVisitor visitor) {
+        visitor.visit(this);
     }
 }

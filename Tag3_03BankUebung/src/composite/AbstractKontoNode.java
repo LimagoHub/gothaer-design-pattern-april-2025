@@ -1,5 +1,7 @@
 package composite;
 
+import composite.visitor.BankVisitor;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -61,5 +63,14 @@ public abstract class AbstractKontoNode implements Iterable<AbstractKontoNode> {
         for (AbstractKontoNode child : getChildren()) {
             child.populateIteratorCollectionRecursive(descendantOrSelf);
         }
+    }
+
+    public abstract void accept(BankVisitor visitor);
+    public void iterate(final BankVisitor visitor) {
+        visitor.init();
+        for (AbstractKontoNode node : this) {
+            node.accept(visitor);
+        }
+        visitor.dispose();
     }
 }
