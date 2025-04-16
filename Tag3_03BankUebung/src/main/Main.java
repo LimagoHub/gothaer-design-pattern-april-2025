@@ -4,6 +4,8 @@ import composite.AbstractKontoNode;
 import composite.Konto;
 import composite.Kontogruppe;
 
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -30,6 +32,14 @@ public class Main {
         e1_2.appendChild(e2_4);
 
         root.print();
+
+        for (AbstractKontoNode node : root) {
+            System.out.println(node);
+        }
+        for(Iterator<AbstractKontoNode> it = root.iterator(); it.hasNext();) {
+            AbstractKontoNode node = it.next();
+            System.out.println(node);
+        }
         //traverse(root);
     }
 
